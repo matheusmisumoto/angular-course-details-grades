@@ -1,0 +1,32 @@
+<h2 class="mt-5 text-center">{{disciplina.title}}</h2>
+<p class="text-center"><strong>{{disciplina.semester}}º semestre - {{disciplina.code}}</strong></p>
+
+<div class="card bg-light mt-5" *ngIf="nota != null">
+  <div class="card-body">
+    <h5 class="card-title">Matheus Henrique Misumoto</h5>
+    <p class="card-text text-success" *ngIf="nota.enrolled == true && nota.finalGrade > 6">Aprovado</p>
+    <p class="card-text text-info" *ngIf="nota.enrolled == true && nota.finalGrade == null">Em curso</p>
+    <p class="card-text text-success" *ngIf="nota.enrolled == false && nota.finalGrade > 6">Dispensado por proficiência</p>
+    <p class="card-text text-success" *ngIf="nota.enrolled == false && nota.finalGrade == null">Dispensado por aproveitamento de estudos</p>
+    <p class="card-text" *ngIf="nota != null && nota.finalGrade != null"><strong>Nota Final:</strong> {{nota.finalGrade}}</p>
+  </div>
+</div>
+
+<div class="card mt-5" *ngIf="nota == null">
+  <div class="card-body">
+    <h5 class="card-title">Matheus Henrique Misumoto</h5>
+    <p class="card-text text-muted">Ainda a cursar</p>
+  </div>
+</div>
+
+<h4 class="mt-5">Objetivo</h4>
+<p>{{disciplina.objective}}</p>
+
+<h4 class="mt-5">Ementa</h4>
+<p>{{disciplina.program}}</p>
+
+<ul class="nav justify-content-center mt-5">
+  <li class="nav-item">
+    <a class="nav-link" onclick="history.back()">Voltar</a>
+  </li>
+</ul>

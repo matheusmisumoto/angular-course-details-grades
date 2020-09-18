@@ -1,0 +1,4 @@
+/* Add application styles & imports to this file! */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+body { font-family: Inter; }
+h1, h2, h3, h4, h5, h6 { font-weight: 700; }

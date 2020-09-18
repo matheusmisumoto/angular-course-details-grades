@@ -1,0 +1,24 @@
+<h2 class="mt-5 mb-5 text-center">Disciplinas</h2>
+
+<ul class="nav justify-content-center">
+  <li class="nav-item" *ngFor="let semestre of [1,2,3,4,5,6]">
+    <span *ngIf="semestre == ciclo" class="nav-link active">{{semestre}}º ciclo</span>
+    <a *ngIf="semestre != ciclo" class="nav-link active" [routerLink] = "['/grade', semestre]">{{semestre}}º ciclo</a>
+  </li>
+</ul>
+
+
+<table class="table mt-4" *ngIf="ciclo > 0">
+  <thead>
+    <tr>
+      <th>Nome da Disciplina</th>
+      <th>Matheus Misumoto</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let disciplina of lista; index as i">
+      <td *ngIf="disciplina.semester == ciclo"><a [routerLink] = "['/disciplina', disciplina.code]">{{disciplina.title}}</a></td>
+      <td *ngIf="disciplina.semester == ciclo">{{getNota(disciplina.code)}}</td>
+    </tr>
+  </tbody>
+</table>
